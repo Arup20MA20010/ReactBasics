@@ -1,0 +1,37 @@
+to use context API in react
+// How can we use context API in react
+The Problem:
+If we want to pass the data from a component to a grand children component
+one need to pass the data as prop to all the component in between 
+which is not required. So we create some kind of global context to 
+use them to store and modify variables
+
+export const userContext=React.createContext();
+
+export function userContextProvider({children}){
+    
+    const[user,setUser] = useState(null);
+
+    return (
+    <userContext.Provider value={{user,setUser}}>
+    {children}
+    </userContext.Provider>
+    )
+  }
+}
+
+<userContextProvider>
+<Login>// setup the 
+<Profile>
+</userContextProvider>
+
+export const function Login(){
+
+  const {setUser} = useContext(UserContext);//to change the context in the UserContext
+
+}
+
+export const function Profile(){
+    const {user} = useContext(UserContext);// to use the userdata from the context
+  }
+
