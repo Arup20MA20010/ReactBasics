@@ -50,6 +50,7 @@ export default function App() {
         toggleEditable,
       }}
     >
+      <h1 className="text-center text-white mt-4 text-lg">Todo List</h1>
       <div className="flex flex-col justify-center items-center mt-[100px]">
         <TodoForm />
         <ul className="m-2 p-2">

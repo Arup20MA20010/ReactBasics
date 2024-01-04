@@ -16,7 +16,7 @@ export default function Todos({ todo }) {
   };
 
   return (
-    <div className="flex">
+    <div className="flex m-3">
       <input
         type="checkbox"
         checked={todo.comleted}
